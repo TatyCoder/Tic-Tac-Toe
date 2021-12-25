@@ -113,7 +113,7 @@ const validateColumns = (index) => {
 }
 
 const validateDiagonal = () => {
-    if ((row1[0] === currentPlayer && row2[1] === currentPlayer && row3[2] === currentPlayer) || 
+    if ((row1[0] === currentPlayer && row2[1] === currentPlayer && row3[2] === currentPlayer) ||
         (row1[2] === currentPlayer && row2[1] === currentPlayer && row3[0] === currentPlayer)) {
         message = `${currentPlayer} won. Game over!`;
         state = "finished";
@@ -132,6 +132,14 @@ const validate = () => {
 
     // Validating diagonal:
     validateDiagonal();
+
+    // Validating tie:
+    if (row1.every((currentValue) => currentValue !== "Blank") &&
+        row2.every((currentValue) => currentValue !== "Blank") &&
+        row3.every((currentValue) => currentValue !== "Blank")) {
+        message = "Players tie. Game over!";
+        state = "finished";
+    }
 }
 
 const restartGame = () => {
