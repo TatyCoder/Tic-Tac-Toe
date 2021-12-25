@@ -14,23 +14,28 @@
         <button id="buttonX"> Player chooses X </button>
         <button id="buttonO"> Player chooses O </button>
     </div>
-    <table id="board" style="display: none">
-        <tr>
-            <td onclick="clickCell(row1, 0)"><img id="r1c1"></td>
-            <td onclick="clickCell(row1, 1)"><img id="r1c2"></td>
-            <td onclick="clickCell(row1, 2)"><img id="r1c3"></td>
-        </tr>
-        <tr>
-            <td onclick="clickCell(row2, 0)"><img id="r2c1"></td>
-            <td onclick="clickCell(row2, 1)"><img id="r2c2"></td>
-            <td onclick="clickCell(row2, 2)"><img id="r2c3"></td>
-        </tr>
-        <tr>
-            <td onclick="clickCell(row3, 0)"><img id="r3c1"></td>
-            <td onclick="clickCell(row3, 1)"><img id="r3c2"></td>
-            <td onclick="clickCell(row3, 2)"><img id="r3c3"></td>
-        </tr>
-    </table>
+    <div id="board" style="display: none">
+        <h4 id="message"></h4>
+        <button onclick="restartGame()" id="restart">Start over</button>
+        <table> 
+            <tr>
+                <td onclick="clickCell(row1, 0)"><img id="r1c1"></td>
+                <td onclick="clickCell(row1, 1)"><img id="r1c2"></td>
+                <td onclick="clickCell(row1, 2)"><img id="r1c3"></td>
+            </tr>
+            <tr>
+                <td onclick="clickCell(row2, 0)"><img id="r2c1"></td>
+                <td onclick="clickCell(row2, 1)"><img id="r2c2"></td>
+                <td onclick="clickCell(row2, 2)"><img id="r2c3"></td>
+            </tr>
+            <tr>
+                <td onclick="clickCell(row3, 0)"><img id="r3c1"></td>
+                <td onclick="clickCell(row3, 1)"><img id="r3c2"></td>
+                <td onclick="clickCell(row3, 2)"><img id="r3c3"></td>
+            </tr>
+        </table>
+    </div>
+   
     <script src="script.js"></script>
 </body>
 </html>
