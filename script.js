@@ -6,7 +6,38 @@ const row3 = ["", "", ""];
 
 let message = "Game started!";
 
-let state = "Not started";
+// The valid states are: "not started", "started", "finished".
+let state = "not started";
+
+let currentPlayer = "";
+
+const chooseX = document.querySelector("#buttonX");
+
+const chooseO = document.querySelector("#buttonO");
+
+chooseX.addEventListener("click", () => {
+    currentPlayer = "X";
+    state = "started";
+    render();
+});
+
+chooseO.addEventListener("click", () => {
+    currentPlayer = "O";
+    state = "started";
+    render();
+});
+
+const clearBoard = () => {
+    for (let i = 0; i < row1.length; i++) {
+        row1[i] = "Blank";
+    }
+    for (let i = 0; i < row2.length; i++) {
+        row2[i] = "Blank";
+    }
+    for (let i = 0; i < row3.length; i++) {
+        row3[i] = "Blank";
+    }
+}
 
 const render = () => {
 
@@ -38,38 +69,6 @@ const render = () => {
 
     document.querySelector("#message").innerText = message;
 }
-
-const clearBoard = () => {
-    for (let i = 0; i < row1.length; i++) {
-        row1[i] = "Blank";
-    }
-    for (let i = 0; i < row2.length; i++) {
-        row2[i] = "Blank";
-    }
-    for (let i = 0; i < row3.length; i++) {
-        row3[i] = "Blank";
-    }
-}
-
-clearBoard();
-
-let currentPlayer = "";
-
-const chooseX = document.querySelector("#buttonX");
-
-chooseX.addEventListener("click", () => {
-    currentPlayer = "X";
-    state = "started";
-    render();
-});
-
-const chooseO = document.querySelector("#buttonO");
-
-chooseO.addEventListener("click", () => {
-    currentPlayer = "O";
-    state = "started";
-    render();
-});
 
 const clickCell = (row, column) => {
     if (state === "finished") {
@@ -145,9 +144,11 @@ const validate = () => {
 const restartGame = () => {
     clearBoard();
     message = "Game started!";
-    state = "Not started";
+    state = "not started";
     currentPlayer = "";
     render();
 }
+
+clearBoard();
 
 render();
