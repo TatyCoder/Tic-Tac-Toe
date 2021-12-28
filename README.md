@@ -1,10 +1,10 @@
 # Tic Tac Toe
 This is the general approach I want to follow:
 
-The Tic Tac Toe can be designed with three arrays that represent the rows, each one with three columns.
-Each time when one of the players click on the board I want to modify the arrays to capture their choice. At this time I want to validate their choices and print messages to match the rules or state of the game. When this is completed I want to update the user interface by using render().
+The Tic Tac Toe can be designed with three arrays that represent the rows of the game, as a grid, each array has three elements which represent the columns.
+Each time when one of the players click on the board I want to modify the arrays to capture their choice. At this time I want to validate their choices and print messages to match the rules or state of the game. When this is completed I use a render function to update the user interface. The approach I'm taking is React framework which I used in the past, that uses state and the render function to update the html based on the state.
 
-The design pattern works like this: everytime the player interacts with the user interface there is an event listener that modifies the application state or data, and then the render function refreshes the html. Only the render function can update the html. 
+The design pattern works like this: everytime the player interacts with the user interface there is an event listener that modifies the application state or data, and then the render function refreshes the html. Only render() can update the html. 
 
 I'm going to create the html file to display the basic design of the Tic Tac Toe game.
 
