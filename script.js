@@ -6,8 +6,8 @@ const row3 = ["", "", ""];
 
 let message = "Game started!";
 
-// The valid states are: "not started", "started", "finished".
-let state = "not started";
+// The valid states are: "notStarted", "started", "finished".
+let state = "notStarted";
 
 let currentPlayer = "";
 
@@ -67,8 +67,12 @@ const render = () => {
         document.querySelector("#board").setAttribute("style", "display: none");
     }
 
+    const messageEl = document.querySelector("#message");
+
     document.querySelector("#message").innerText = message;
-}
+
+    messageEl.className = state;
+}    
 
 const clickCell = (row, column) => {
     if (state === "finished") {
@@ -144,7 +148,7 @@ const validate = () => {
 const restartGame = () => {
     clearBoard();
     message = "Game started!";
-    state = "not started";
+    state = "notStarted";
     currentPlayer = "";
     render();
 }
